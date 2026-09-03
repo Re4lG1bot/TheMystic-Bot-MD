@@ -1,4 +1,4 @@
-import { WAMessageStubType } from "baileys";
+import { WAMessageStubType, isPnUser, isLidUser } from "baileys";
 import PhoneNumber from 'awesome-phonenumber';
 import chalk from 'chalk';
 import { watchFile } from 'fs';
@@ -11,7 +11,7 @@ const MAX_MESSAGE_LENGTH = 400;
 
 export default async function(m, conn = { user: {} }) {
   const _name = await conn.getName(m.sender);
-  const sender = PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international') + (_name ? ' ~' + _name : '');
+  const sender = isPnUser(m.sender) ? PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international') + (_name ? ' ~' + _name : '') : m.sender + (_name ? ' ~' + _name : '');
   const chat = await conn.getName(m.chat);
   let img;
   try {

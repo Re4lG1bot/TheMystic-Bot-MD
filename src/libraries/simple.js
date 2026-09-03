@@ -41,7 +41,7 @@ const {
     prepareWAMessageMedia,
     WA_DEFAULT_EPHEMERAL,
     PHONENUMBER_MCC,
-} = (await import("baileys")).default;
+} = await import("baileys");
 
 export function makeWASocket(connectionOptions, options = {}) {
     /**
@@ -58,6 +58,29 @@ export function makeWASocket(connectionOptions, options = {}) {
             },
             writable: true,
         },
+        resolveUser: {
+    /**
+     * resolveUser by https://github.com/ReyEndymion/ani_mx_scans-md
+     * @param {String} id 
+     * @returns {{jid: String|null, lid: String|null, id: String, pn: String|null, type: 'jid'|'lid'|'unknown'}}
+    */
+   value(id) {
+    const cache = conn.signalRepository.lidMapping.mappingCache
+    if (!id) return id
+    const [value, domain] = id.split('@')
+    if (domain === 's.whatsapp.net') {
+        const pLid = cache.get(`pn:${value}`)
+        return { jid: id, lid: pLid ? pLid+lid : null, id: value, pn: value, type: 'jid'}
+    }
+
+    if (domain === 'lid') {
+        const pn = cache.get(`lid:${value}`)
+        return { jid: pn ? pn+userID : null, lid: id, id: value, pn: pn || null, type: 'lid' }
+    }
+
+    return { jid: id, lid: null, id: null, pn: null, type: 'unknown' }
+        },
+    },
         decodeJid: {
             value(jid) {
                 if (!jid || typeof jid !== "string")
