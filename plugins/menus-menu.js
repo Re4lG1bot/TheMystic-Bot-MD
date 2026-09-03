@@ -7,7 +7,7 @@ const handler = async (m, { conn, usedPrefix, __dirname, isPrems }) => {
         const tradutor = _translate.plugins.menu;
 
     try {
-        const username = '@' + m.sender.split('@s.whatsapp.net')[0];
+        const username = '@' + m.sender.split('@')[0];
         if (usedPrefix == 'a' || usedPrefix == 'A') return;
 
         const more = String.fromCharCode(8206);

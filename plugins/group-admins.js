@@ -7,7 +7,7 @@ const handler = async (m, { conn, participants, groupMetadata, args }) => {
  try {
  const pp = await conn.profilePictureUrl(m.chat, 'image').catch((_) => null) || './src/assets/images/menu/main/administracion.png';
  const groupAdmins = participants.filter((p) => p.admin);
- const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.jid.split('@s.whatsapp.net')[0]}`).join('\n');
+ const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.jid.split('@')[0]}`).join('\n');
  const owner = groupMetadata.owner || groupAdmins.find((p) => p.admin === 'superadmin')?.jid || m.chat.split`-`[0] + '@s.whatsapp.net';
  const message = args.join(` `);
  const headers = `${tradutor.texto1[3]} ${message}`;

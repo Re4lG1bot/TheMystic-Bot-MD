@@ -1,7 +1,7 @@
 import util from 'util';
 import path from 'path';
 
-const user = (a) => '@' + a.split('@s.whatsapp.net')[0];
+const user = (a) => '@' + a.split('@')[0];
 function handler(m, { groupMetadata, command, conn, text, usedPrefix }) {
   const datas = global
   const idioma = datas.db.data.users[m.sender].language || global.defaultLenguaje

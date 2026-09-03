@@ -89,20 +89,20 @@ const handler = async (m, {conn}) => {
   }, 20000);
 
   setTimeout(() => {
-    conn.reply(m.chat, `@${m.sender.split('@s.whatsapp.net')[0]} *${[tradutor.texto2[0], tradutor.texto2[1], tradutor.texto2[2], tradutor.texto2[3]].getRandom()}*`, null, {mentions: [m.sender]});
+    conn.reply(m.chat, `@${m.sender.split('@')[0]} *${[tradutor.texto2[0], tradutor.texto2[1], tradutor.texto2[2], tradutor.texto2[3]].getRandom()}*`, null, {mentions: [m.sender]});
   }, 18000);
   // conn.sendHydrated(m.chat, `${conn.getName(m.sender)} *${['OBJETIVO FIJADO`${conn.getName(m.sender)} *${['OBJETIVO FIJADO 🎯','Carnada en Marcha 🍫 🍇 🍖','ANIMALES DETECTADOS!! 🐂 🐅 🐘 🐼','ANIMALES DETECTADOS!! 🐖 🐃 🐮 🐒'].getRandom()}*` 🎯','Carnada en Marcha 🍫 🍇 🍖','ANIMALES DETECTADOS!! 🐂 🐅 🐘 🐼','ANIMALES DETECTADOS!! 🐖 🐃 🐮 🐒'].getRandom()}*`, wm, null, null, null, null, null, [
   // [null, null]], null)}, 18000)
 
   setTimeout(() => {
-    conn.reply(m.chat, `@${m.sender.split('@s.whatsapp.net')[0]} *${[tradutor.texto3[0], tradutor.texto3[1], tradutor.texto3[2], tradutor.texto3[3]].getRandom()}*`, null, {mentions: [m.sender]});
+    conn.reply(m.chat, `@${m.sender.split('@')[0]} *${[tradutor.texto3[0], tradutor.texto3[1], tradutor.texto3[2], tradutor.texto3[3]].getRandom()}*`, null, {mentions: [m.sender]});
   }, 15000);
   // conn.sendHydrated(m.chat, `${conn.getName(m.sender)} *${['Armas lista para la Caza!!','Probando Armas 🔫 💣 🪓 🏹','CARROS PARA LA CAZA!! 🚗 🏍️ 🚜','TIEMPO BUENO PARA LA CAZA 🧤'].getRandom()}*`, wm, null, null, null, null, null, [
   // [null, null]], null)}, 15000)
 
   const mentionedJid = await m?.mentionedJid || null;
   setTimeout(() => {
-    conn.reply(m.chat, `@${m.sender.split('@s.whatsapp.net')[0]} *${[tradutor.texto4[0], tradutor.texto4[1], tradutor.texto4[2], tradutor.texto4[3]].getRandom()}*`, m, mentionedJid ? {mentions: [m.sender]} : {});
+    conn.reply(m.chat, `@${m.sender.split('@')[0]} *${[tradutor.texto4[0], tradutor.texto4[1], tradutor.texto4[2], tradutor.texto4[3]].getRandom()}*`, m, mentionedJid ? {mentions: [m.sender]} : {});
   }, 0);
   // conn.sendHydrated(m.chat, `${conn.getName(m.sender)} *${['Buscando implementos de caza...','Alistando todo para la caza!!','Estableciendo Lugar de la Caza...','PREPARANDO LUGAR DE CAZA!!'].getRandom()}*`, wm, null, null, null, null, null, [
   // [null, null]], null)}, 0)
