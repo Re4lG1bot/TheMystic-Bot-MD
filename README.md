@@ -1,7 +1,7 @@
 <p align="center">
  <img width="180px" src="https://i.ibb.co/Qn1W6cP/image.png" align="center"/>
  <h2 align="center">TheMystic-Bot-MD</h2>
- <p align="center">DEPRECATED | PROYECTO DESACTUALIZADO.</p>
+ <p align="center">ULTIMA ACTUALIZACION DE LA BASE (09/2026)... DEPRECATED PLUGINS| PROYECTO DESACTUALIZADO PLUGINS.</p>
  <p align="center">Un bot para la plataforma de WhatsApp automatizado, basado especialmente en Node.js, que permite realizar múltiples funciones y personalizaciones en la plataforma.</p>
 </p>
 
