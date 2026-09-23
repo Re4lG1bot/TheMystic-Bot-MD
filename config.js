@@ -32,10 +32,14 @@ global.BASE_API_DELIRIUS = "https://delirius-apiofc.vercel.app";
 
 global.packname = 'Sticker';
 global.author = 'BrunoSobrino';
-global.wm = 'The Mystic - Bot';
-global.titulowm = 'Mystic Bot';
-global.titulowm2 = `Mystic Bot`
-global.igfg = 'The Mystic';
+global.wm = 'Re4lG1|Bot🙋🏽🌟';
+global.titulowm = 'Re4lG1|Bot';
+global.titulowm2 = 'Re4lG1|Bot';
+global.igfg = 'Re4lG1|Bot';
+
+
+
+
 global.wait = '*_[ ⏳ ] Cargando..._*';
 
 global.imagen1 = fs.readFileSync('./src/assets/images/menu/languages/es/menu.png');
